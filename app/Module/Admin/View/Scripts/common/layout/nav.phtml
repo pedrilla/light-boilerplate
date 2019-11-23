@@ -1,0 +1,68 @@
+<nav class="navbar navbar-primary box-shadow">
+
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand bmd-ripple" href="<?php echo $this->uri(['controller' => 'index']); ?>">
+                Light.Admin
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+
+                <li class="dropdown bmd-dropdown">
+
+                    <a href="#" class="dropdown-toggle bmd-ripple" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <i class="flaticon-settings49"></i>
+                        Item <i class="flaticon-show8"></i>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+
+                        <li>
+                            <a href="<?php echo $this->uri(['controller' => 'index']); ?>">
+                                <i class="fa fa-cogs"></i>
+                                Sub-item 1
+                            </a>
+                        </li>
+
+                        <li role="separator" class="divider"></li>
+
+                        <li>
+                            <a href="<?php echo $this->uri(['controller' => 'index']); ?>">
+                                <i class="fa fa-object-ungroup"></i>
+                                Sub-item 2
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="<?php echo $this->uri(['controller' => 'storage']); ?>">
+                        <i class="fa fa-file"></i>
+                        Хранилище
+                    </a>
+                </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="bmd-ripple" data-sign-out="<?php echo $this->uri(['controller' => 'login', 'action' => 'logout']); ?>">
+                        <i class="fa fa-sign-out-alt"></i>Выйти
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
