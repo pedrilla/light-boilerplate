@@ -35,7 +35,7 @@ window.modal = {
         });
     },
 
-    container: function (content, callback, options, title) {
+    container: function (content, callback, options, title = 'Сообщение') {
         this._hideModalIfItsOpenedAndOpenNew($(this.templates.container).html().replace('{{content}}', content).replace('{{title}}', title), callback, options);
     },
 

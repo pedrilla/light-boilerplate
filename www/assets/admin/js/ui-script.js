@@ -116,8 +116,29 @@ $(document).ready(function(){
                     $(this).attr('data-initialized', 'true');
 
                     $(this).bootstrapMaterialDatePicker({
+                        time: true,
+                        weekStart: 1,
+                        format: $(this).data('format'),
+                    }).on('change', () => {
+                        $(this).blur();
+                    });
+                }
+            });
+        }
+
+        if ($('[data-datepicker]').length) {
+
+            $('[data-datepicker]').each(function(){
+
+                if (!$(this).data('initialized')) {
+                    $(this).attr('data-initialized', 'true');
+
+                    $(this).bootstrapMaterialDatePicker({
                         time: false,
-                        format: 'YYYY/MM/DD'
+                        weekStart: 1,
+                        format: $(this).data('format'),
+                    }).on('change', () => {
+                        $(this).blur();
                     });
                 }
             });

@@ -138,7 +138,7 @@ a {
 }
 
 .form-control.bmd-select {
-    margin-top: 19px;
+    margin-top: 14px;
 }
 
 .manage-form .form-control.bmd-select {
@@ -477,4 +477,35 @@ iframe.storage {
 
 form.bmd-form .panel-body > hr:first-of-type {
     display: none;
+}
+
+.positioning .item {
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    width: 100%;
+    padding: 16px;
+    position: relative;
+    max-height: 52px;
+    overflow: hidden;
+    background: white;
+    cursor: pointer;
+}
+
+.positioning .item .fa {
+    position: absolute;
+    right: 16px;
+}
+
+.positioning .item.ui-sortable-placeholder {
+    width: 100%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.03);
+    border-color: lightgray;
+    border-style: dashed;
+    max-height: 52px;
 }
