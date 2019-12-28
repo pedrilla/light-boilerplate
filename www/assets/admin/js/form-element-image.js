@@ -22,6 +22,17 @@ $(document).ready(function(){
         };
     });
 
+    $(document).on('click', '[data-element-imagemultiple] [data-remove]', function(){
+
+        var $remove = $(this);
+
+        modal.confirm('Удалить изображение?', () => {
+            $remove.parent().remove();
+        });
+
+        return false;
+    });
+
 
 
     $(document).on('click', '[data-element-imagemultiple] [data-select]', function(){
@@ -36,7 +47,7 @@ $(document).ready(function(){
 
             let elementContainer = selectButton.closest('[data-element-imagemultiple]');
 
-            elementContainer.find('input').val(image);
+            // elementContainer.find('input').val(image);
 
             let template = elementContainer.find('[data-template]').html().split('{{value}}').join(image);
 
