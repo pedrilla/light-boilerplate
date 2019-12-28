@@ -195,6 +195,11 @@ iframe.storage {
     float: left;
 }
 
+.preview-image-single .close {
+    color: white;
+    opacity: 1;
+}
+
 .modal .full-screen-image {
     width: 100%;
     border-radius: 5px;
