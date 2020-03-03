@@ -17,7 +17,7 @@ return [
         // Not required - just will be used as false
         'exception' => true,
 
-        // Cookie namespace
+        // Cookie namespace. String
         'cookie' => null,
 
         // PHP ini vars
@@ -41,13 +41,18 @@ return [
             'namespace' => 'App',
         ],
 
+
         'asset' => [
 
             // Adding ?_=microtime()
             'underscore' => true,
 
             // prefix for assets
-            'prefix' => '/assets'
+            'prefix' => '/assets',
+
+            // JS settings
+            'defer' => true,
+            'async' => true
         ],
 
         // Database settings
@@ -62,8 +67,55 @@ return [
 
         // Storage settings
         'storage' => [
-            'url' => 'http://storage.sales.intelbiz.in.ua/',
-            'route' => '_storage'
+            'url' => 'https://{ STORAGE DOMAIN }/',
+            'route' => '_storage',
+            'key' => '{ STORAGE KEY }'
+        ],
+
+        // Google Firebase Cloud Messaging settings
+        'fcm' => [
+            'key' => '{ PUT FCM KEY HERE }'
+        ],
+
+        // Default headers
+        'headers' => [
+            '{ HEADER NAME }' => '{ HEADER TITLE }',
+        ],
+
+        'admin' => [
+
+            // will be used 'Light.Admin' as default
+            'title' => '{ PROJECT TITLE }',
+
+            'auth' => [
+                'route' => '_auth',
+                'cookieName' => 'authIdentity',
+                'login' => 'root',
+                'password' => '1',
+            ],
+
+            'menu' => [
+                [
+                    'title' => 'Multiple Menu Item',
+                    'icon' => '{ MENU ITEM ICON }',
+                    'items' => [
+                        // Same as SINGLE MENU ITEM
+
+                        // Separator example
+                        ['separator'],
+                    ]
+                ],
+                [
+                    'title' => 'Single Menu Item',
+                    'icon' => '{ MENU ITEM ICON }',
+                    'url' => ['controller' => '...']
+                ],
+                [
+                    'title' => 'Хранилище',
+                    'icon' => 'file',
+                    'url' => ['controller' => '_storage']
+                ],
+            ]
         ]
     ],
 
@@ -77,9 +129,38 @@ return [
             // will be ignored if light.modules will not be specified
             'module' => 'face',
 
+            // Use for customizing Light settings for current module
+            'light' => [
+
+                'headers' => [
+                    'Cache-Control' => 'max-age=86400, must-revalidate',
+                    'Vary' => 'User-Agent',
+                    'Expires' => date('r', time() + 86400),
+                    'Date' => date('r', time())
+                ],
+
+                // View renderer settings
+                'view' => [
+                    'minify' => true
+                ],
+            ],
+
             // If TRUE disallow to use unspecified urls
             // Ex. /{controller}/{action}/param1/value1
             'strict' => false,
+
+            // Prefix for url
+            'prefix' => '/:param',
+
+            // Prefix injector
+            'prefixInjector' => [
+
+                'param' => function (string $param) {
+
+                    // TODO: processing something
+                    return $param;
+                }
+            ],
 
             'routes' => [
 
@@ -140,10 +221,5 @@ return [
             // Possible settings explained for '*'
             'module' => 'cli'
         ],
-    ],
-
-    'admin' => [
-        'login' => 'root',
-        'password' => '1'
     ],
 ];
