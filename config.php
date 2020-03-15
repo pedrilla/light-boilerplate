@@ -79,7 +79,7 @@ return [
 
         // Default headers
         'headers' => [
-            '{ HEADER NAME }' => '{ HEADER TITLE }',
+            // '{ HEADER NAME }' => '{ HEADER TITLE }',
         ],
 
         'admin' => [
@@ -97,18 +97,32 @@ return [
             'menu' => [
                 [
                     'title' => 'Multiple Menu Item',
-                    'icon' => '{ MENU ITEM ICON }',
+                    'icon' => '{ FONTAWESOME ICON }',
                     'items' => [
-                        // Same as SINGLE MENU ITEM
+
+                        // Same as SUB MENU ITEM
+                        [
+                            'title' => 'Sub Menu Item 1',
+                            'icon' => '{ FONTAWESOME ICON }',
+                            'url' => ['controller' => '...', 'action' => '...']
+                        ],
+
 
                         // Separator example
                         ['separator'],
+
+                        // Same as SUB MENU ITEM
+                        [
+                            'title' => 'Sub Menu Item 2',
+                            'icon' => '{ FONTAWESOME ICON }',
+                            'url' => ['controller' => '...', 'action' => '...']
+                        ],
                     ]
                 ],
                 [
                     'title' => 'Single Menu Item',
-                    'icon' => '{ MENU ITEM ICON }',
-                    'url' => ['controller' => '...']
+                    'icon' => '{ FONTAWESOME ICON }',
+                    'url' => ['controller' => '...', 'action' => '...']
                 ],
                 [
                     'title' => 'Хранилище',
