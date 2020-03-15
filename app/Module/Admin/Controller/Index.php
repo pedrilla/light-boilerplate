@@ -2,7 +2,9 @@
 
 namespace App\Module\Admin\Controller;
 
-class Index extends Base
+use Light\Crud;
+
+class Index extends Crud
 {
     public function index()
     {
